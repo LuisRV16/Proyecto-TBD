@@ -1,3 +1,5 @@
+DROP SCHEMA IF EXISTS concursoVEX;
+
 create schema concursoVEX;
 
 use concursoVEX;
@@ -13,7 +15,9 @@ create table eventos(
     nombre varchar(80) unique not null,
     hora_i time,
     hora_f time,
-    fecha date unique
+    fecha date unique,
+    id_sede varchar(15) not null,
+    foreign key(id_sede) references sedes(id) on update cascade
 );
 
 create table juez(
@@ -34,10 +38,10 @@ create table jurados(
 create table juez_jurados(
 	id_juez varchar(20) not null,
     id_evento varchar(15) not null,
-    nombre varchar(30) not null,
-    primary key (id_juez, id_evento, nombre),
+    nombre_jurado varchar(30) not null,
+    primary key (id_juez, id_evento, nombre_jurado),
     foreign key (id_juez) references juez(id),
-    foreign key (id_evento, nombre) references jurados(id_evento, nombre) on update cascade
+    foreign key (id_evento, nombre_jurado) references jurados(id_evento, nombre) on update cascade
 );
 
 create table instituciones(
@@ -75,11 +79,10 @@ create table integrantes(
     nombre_equipo varchar(30) not null,
     nombre_institucion varchar(100) not null,
     id_evento varchar(15) not null,
-    fecha_nac date not null,
-   -- edad int not null,
+    edad int not null,
     primary key(nombre, nombre_equipo, nombre_institucion, id_evento),
     foreign key(nombre_equipo, nombre_institucion, id_evento)
-    references equipos(nombre, nombre_institucion, id_evento) on delete cascade
+    references equipos(nombre, nombre_institucion, id_evento) on delete cascade /*----*/
 );
 
 create table diseno (
@@ -160,3 +163,30 @@ create table evaluacion(
     foreign key(id_programacion) references programacion(id),
     foreign key(id_construccion) references construccion(id)
 );
+
+-- Nivel Base de datos
+create user 'admin'@'localhost' identified by 'admin123';
+grant select, update, insert on concursoVEX.* to 'admin'@'localhost';
+-- El admin no tiene permitido eliminar campos ni tablas de la base de datos
+
+-- Nivel de tabla
+	-- Juez
+create user 'juez'@'localhost' identified by 'juez123';
+grant select on concursoVEX.sedes to 'juez'@'localhost';
+grant select on concursoVEX.eventos to 'juez'@'localhost';
+grant select on concursoVEX.juez to 'juez'@'localhost';
+grant select on concursoVEX.jurado to 'juez'@'localhost';
+grant select on concursoVEX.evaluacion to 'juez'@'localhost';
+grant insert on concursoVEX.diseno to 'juez'@'localhost';
+grant insert on concursoVEX.programacion to 'juez'@'localhost';
+grant insert on concursoVEX.construccion to 'juez'@'localhost';
+
+	-- Instituciones
+create user 'itcm'@'localhost' identified by 'itcm123';
+grant select on concursoVEX.sedes to 'itcm'@'localhost';
+grant select on concursoVEX.eventos to 'itcm'@'localhost';
+grant select, insert, update on concursoVEX.asesores to 'itcm'@'localhost';
+grant select, insert, update on concursoVEX.instituciones to 'itcm'@'localhost';
+grant select, insert, update on concursoVEX.equipos to 'itcm'@'localhost';
+grant select, insert, update on concursoVEX.integrantes to 'itcm'@'localhost';
+grant select on concursoVEX.evaluacion to 'itcm'@'localhost';
