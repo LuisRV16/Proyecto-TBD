@@ -20,13 +20,6 @@ create table eventos(
     foreign key(id_sede) references sedes(id) on update cascade
 );
 
-create table juez(
-	id varchar(20) primary key,
-    nombre varchar(50) not null,
-    institucion varchar(50) not null,
-    nivel_academico varchar(20) not null
-);
-
 create table jurados(
 	nombre varchar(30) not null,
     id_evento varchar(15) not null,
@@ -35,54 +28,60 @@ create table jurados(
     foreign key(id_evento) references eventos(id) on update cascade
 );
 
-create table juez_jurados(
+create table jueces(
+	id varchar(20) primary key,
+    nombre varchar(50) not null,
+    institucion varchar(50) not null,
+    nivel_academico varchar(20) not null
+);
+
+create table jueces_jurados(
 	id_juez varchar(20) not null,
     id_evento varchar(15) not null,
     nombre_jurado varchar(30) not null,
     primary key (id_juez, id_evento, nombre_jurado),
-    foreign key (id_juez) references juez(id),
+    foreign key (id_juez) references jueces(id),
     foreign key (id_evento, nombre_jurado) references jurados(id_evento, nombre) on update cascade
 );
 
 create table instituciones(
+	id_evento varchar(15) not null,
 	nombre varchar(100) not null,
-    id_evento varchar(15) not null,
     direccion varchar(100) not null,
     nivel_academico varchar(15) not null,
-    primary key(nombre, id_evento),
+    primary key(id_evento, nombre),
     foreign key(id_evento) references eventos(id) on update cascade
 );
 
 create table asesores(
+	id_evento varchar(15) not null,
+	nombre_institucion varchar(100) not null,
 	nombre varchar(50) unique not null,
-    nombre_institucion varchar(100) not null,
-    id_evento varchar(15) not null,
     correo varchar(100) not null,
-    primary key(nombre, nombre_institucion, id_evento),
-    foreign key(nombre_institucion, id_evento)
-    references instituciones(nombre, id_evento) on update cascade
+    primary key(id_evento, nombre_institucion, nombre),
+    foreign key(id_evento, nombre_institucion) references instituciones(id_evento, nombre) on update cascade
 );
 
 create table equipos(
+	id_evento varchar(15) not null,
+	nombre_institucion varchar(100) not null,
 	nombre varchar(30) not null,
-    nombre_institucion varchar(100) not null,
-    id_evento varchar(15) not null,
     nombre_asesor varchar(50) not null,
     categoria enum ('primaria', 'secundaria', 'bachillerato', 'universidad') not null,
-    primary key(nombre, nombre_institucion, id_evento),
-    foreign key(nombre_institucion, id_evento) references instituciones(nombre, id_evento) ,
+    primary key(id_evento, nombre_institucion, nombre),
+    foreign key(id_evento, nombre_institucion) references instituciones(id_evento, nombre),
     foreign key(nombre_asesor) references asesores(nombre) on update cascade
 );
 
 create table integrantes(
-	nombre varchar(50) not null,
-    nombre_equipo varchar(30) not null,
-    nombre_institucion varchar(100) not null,
     id_evento varchar(15) not null,
+    nombre_institucion varchar(100) not null,
+    nombre_equipo varchar(30) not null,
+    nombre varchar(50) not null,
     edad int not null,
-    primary key(nombre, nombre_equipo, nombre_institucion, id_evento),
-    foreign key(nombre_equipo, nombre_institucion, id_evento)
-    references equipos(nombre, nombre_institucion, id_evento) on delete cascade /*----*/
+    primary key(id_evento, nombre_institucion, nombre_equipo, nombre),
+    foreign key(id_evento, nombre_institucion, nombre_equipo)
+    references equipos(id_evento, nombre_institucion, nombre) on delete cascade /*----*/
 );
 
 create table diseno (
@@ -148,22 +147,22 @@ create table construccion (
 
 
 create table evaluacion(
-	nombre_equipo varchar(30) not null,
-    nombre_institucion varchar(100) not null,
-    id_evento varchar(15) not null,
+	id_evento varchar(15) not null,
     nombre_jurado varchar(30) not null,
+    nombre_institucion varchar(100) not null,
+	nombre_equipo varchar(30) not null,
     id_diseno varchar(3) not null,
     id_programacion varchar(3) not null,
     id_construccion varchar(3) not null,
     calificacion float,
-    primary key(nombre_equipo, nombre_institucion, id_evento, nombre_jurado, id_diseno, id_programacion, id_construccion),
-    foreign key(nombre_equipo, nombre_institucion, id_evento) references equipos(nombre, nombre_institucion, id_evento),
+    primary key(id_evento, nombre_jurado, nombre_institucion, nombre_equipo, id_diseno, id_programacion, id_construccion),
+    foreign key(id_evento, nombre_institucion, nombre_equipo) references equipos(id_evento, nombre_institucion, nombre),
     foreign key(id_evento, nombre_jurado) references jurados(id_evento, nombre),
     foreign key(id_diseno) references diseno(id),
     foreign key(id_programacion) references programacion(id),
     foreign key(id_construccion) references construccion(id)
 );
-
+/*
 -- Nivel Base de datos
 create user 'admin'@'localhost' identified by 'admin123';
 grant select, update, insert on concursoVEX.* to 'admin'@'localhost';
@@ -189,4 +188,4 @@ grant select, insert, update on concursoVEX.asesores to 'itcm'@'localhost';
 grant select, insert, update on concursoVEX.instituciones to 'itcm'@'localhost';
 grant select, insert, update on concursoVEX.equipos to 'itcm'@'localhost';
 grant select, insert, update on concursoVEX.integrantes to 'itcm'@'localhost';
-grant select on concursoVEX.evaluacion to 'itcm'@'localhost';
+grant select on concursoVEX.evaluacion to 'itcm'@'localhost';*/
