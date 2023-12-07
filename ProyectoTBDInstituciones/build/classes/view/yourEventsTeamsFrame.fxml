@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="610.0" minHeight="400.0" minWidth="610.0" prefHeight="400.0" prefWidth="610.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.YourEventsTeamsFrameController">
+   <children>
+      <BorderPane maxHeight="400.0" maxWidth="610.0" minHeight="400.0" minWidth="610.0" prefHeight="400.0" prefWidth="610.0">
+         <right>
+            <Pane id="paneBright" maxHeight="360.0" maxWidth="210.0" minHeight="360.0" minWidth="210.0" prefHeight="360.0" prefWidth="210.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="btnRed" fx:id="btnAddTeam" layoutX="25.0" layoutY="300.0" maxHeight="38.0" maxWidth="160.0" minHeight="38.0" minWidth="160.0" mnemonicParsing="false" onAction="#addTeam" prefHeight="38.0" prefWidth="160.0" text="A Ñ A D I R" />
+                  <Label fx:id="lblInfo" maxHeight="240.0" maxWidth="210.0" minHeight="240.0" minWidth="210.0" prefHeight="240.0" prefWidth="210.0" />
+               </children>
+            </Pane>
+         </right>
+         <top>
+            <Pane id="paneTop" maxHeight="40.0" maxWidth="610.0" minHeight="40.0" minWidth="610.0" prefHeight="40.0" prefWidth="610.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane maxHeight="40.0" maxWidth="400.0" minHeight="40.0" minWidth="400.0" prefHeight="40.0" prefWidth="400.0">
+                     <children>
+                        <Label id="lblTitleMenu" maxHeight="40.0" maxWidth="400.0" minHeight="40.0" minWidth="400.0" prefHeight="40.0" prefWidth="400.0" text="E Q U I P O S" />
+                        <Button id="btnBack" fx:id="btnBack" contentDisplay="CENTER" layoutX="-7.0" layoutY="-7.0" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#goBack" prefHeight="55.0" prefWidth="55.0" text="◀" textAlignment="CENTER" />
+                     </children>
+                  </Pane>
+                  <Pane id="paneBright" layoutX="400.0" prefHeight="40.0" prefWidth="210.0">
+                     <children>
+                        <Label fx:id="lblTitulo" maxWidth="210.0" minHeight="40.0" minWidth="210.0" prefWidth="210.0" text="Nombre evento" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <ScrollPane fx:id="scrollPaneEvents" maxHeight="360.0" maxWidth="400.0" minHeight="360.0" minWidth="400.0" prefHeight="360.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <content>
+                  <VBox id="scroll" fx:id="vboxEvents" maxHeight="1.7976931348623157E308" maxWidth="380.0" minHeight="-Infinity" minWidth="380.0" prefHeight="360.0" prefWidth="380.0" />
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

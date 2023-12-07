@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="350.0" maxWidth="640.0" minHeight="350.0" minWidth="640.0" prefHeight="350.0" prefWidth="640.0" style="-fx-background-color: rgb(25,25,25);" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminCreateEventFrameController">
+   <children>
+      <BorderPane layoutY="3.0" maxHeight="350.0" maxWidth="640.0" minHeight="350.0" minWidth="640.0" prefHeight="350.0" prefWidth="640.0">
+         <top>
+            <Pane id="paneTop" prefHeight="60.0" prefWidth="640.0" BorderPane.alignment="TOP_CENTER">
+               <children>
+                  <Label id="lblTitle" fx:id="lblTitle" alignment="CENTER" layoutX="-1.0" layoutY="14.0" prefHeight="35.0" prefWidth="640.0" text="E V E N T O  N U E V O" textAlignment="CENTER" textFill="#bcbcbc">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Button id="btnBack" fx:id="btnGoBack" alignment="TOP_CENTER" layoutX="2.0" layoutY="2.0" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#goBack" prefHeight="55.0" prefWidth="55.0" text="◀" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font></Button>
+               </children>
+            </Pane>
+         </top>
+         <bottom>
+            <Pane id="pane" prefHeight="100.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="btnRed" fx:id="btnAdd" layoutX="216.0" layoutY="41.0" mnemonicParsing="false" onAction="#add" prefHeight="44.0" prefWidth="208.0" stylesheets="@style.css" text="A G R E G A R  E V E N T O" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="lblMsg" alignment="CENTER" layoutX="1.0" layoutY="1.0" prefHeight="40.0" prefWidth="640.0" stylesheets="@style.css" textFill="#ffb25e">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </bottom>
+         <center>
+            <BorderPane id="pane" prefHeight="200.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+               <left>
+                  <Pane id="pane" prefHeight="200.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ComboBox fx:id="comboSede" layoutX="25.0" layoutY="125.0" maxHeight="35.0" minHeight="35.0" prefHeight="35.0" prefWidth="200.0" promptText="Sede" />
+                        <DatePicker fx:id="dpDate" editable="false" layoutX="25.0" layoutY="75.0" prefHeight="35.0" prefWidth="200.0" promptText="Fecha" />
+                        <TextField fx:id="txtName" layoutX="25.0" layoutY="25.0" prefHeight="35.0" prefWidth="200.0" promptText="Nombre">
+                           <font>
+                              <Font name="Lucida Sans Regular" size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </Pane>
+               </left>
+               <right>
+                  <Pane id="pane" prefHeight="190.0" prefWidth="390.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="390.0">
+                           <left>
+                              <Pane prefHeight="190.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label id="lblBig" fx:id="lblHoraF1" layoutY="132.0" prefHeight="35.0" prefWidth="160.0" text="  Categorias:" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="lblBig" fx:id="lblHoraF" layoutY="75.0" prefHeight="35.0" prefWidth="160.0" text="  Hora de fin:" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label id="lblBig" fx:id="lblHoraI" layoutY="25.0" prefHeight="35.0" prefWidth="160.0" text="  Hora de inicio:" textFill="WHITE">
+                                       <font>
+                                          <Font name="Lucida Sans Regular" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Line endY="190.0" startY="10.0" />
+                                 </children>
+                              </Pane>
+                           </left>
+                           <right>
+                              <Pane prefHeight="190.0" prefWidth="230.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <CheckBox fx:id="checkU" layoutX="115.0" layoutY="155.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" stylesheets="@style.css" text="Universidad" textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox fx:id="checkB" layoutY="155.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" stylesheets="@style.css" text="Bachillerato" textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox fx:id="checkS" layoutX="115.0" layoutY="125.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" stylesheets="@style.css" text="Secundaria" textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox fx:id="checkP" layoutY="125.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="100.0" stylesheets="@style.css" text="Primaria" textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <ComboBox fx:id="comboFinM" disable="true" layoutX="115.0" layoutY="75.0" prefHeight="35.0" prefWidth="100.0" promptText="Min" />
+                                    <ComboBox fx:id="comboFinH" disable="true" layoutY="75.0" onAction="#unblockFinalM" prefHeight="35.0" prefWidth="100.0" promptText="Hora" />
+                                    <ComboBox fx:id="comboMInic" disable="true" layoutX="115.0" layoutY="25.0" onAction="#unblockFinalH" prefHeight="35.0" prefWidth="100.0" promptText="Min" />
+                                    <ComboBox fx:id="comboHInic" disable="true" layoutY="25.0" onAction="#unblockMinic" prefHeight="35.0" prefWidth="100.0" promptText="Hora" />
+                                 </children>
+                              </Pane>
+                           </right>
+                        </BorderPane>
+                     </children>
+                  </Pane>
+               </right>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
+</Pane>

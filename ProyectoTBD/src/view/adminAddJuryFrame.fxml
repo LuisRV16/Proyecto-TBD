@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="230.0" maxWidth="560.0" minHeight="230.0" minWidth="560.0" prefHeight="230.0" prefWidth="560.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminAddJuryFrameController">
+   <children>
+      <BorderPane maxHeight="230.0" maxWidth="560.0" minHeight="230.0" minWidth="560.0" prefHeight="230.0" prefWidth="560.0">
+         <top>
+            <Pane id="paneTop" maxHeight="60.0" maxWidth="560.0" minHeight="60.0" minWidth="560.0" prefHeight="60.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblTitle" maxHeight="60.0" maxWidth="560.0" minHeight="60.0" minWidth="560.0" prefHeight="60.0" prefWidth="560.0" text="Añadir Jurado" textFill="WHITE" />
+                  <Button id="btnBack" fx:id="btnGoBack" layoutY="3.0" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#goBack" prefHeight="55.0" prefWidth="55.0" text="◀" />
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane id="pane" maxHeight="170.0" maxWidth="560.0" minHeight="170.0" minWidth="560.0" prefHeight="170.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ComboBox fx:id="comboJudge1" layoutX="20.0" layoutY="20.0" maxHeight="40.0" maxWidth="160.0" minHeight="40.0" minWidth="160.0" prefHeight="40.0" prefWidth="160.0" />
+                  <ComboBox fx:id="comboJudge2" layoutX="200.0" layoutY="20.0" maxHeight="40.0" maxWidth="160.0" minHeight="40.0" minWidth="160.0" prefHeight="40.0" prefWidth="160.0" />
+                  <ComboBox fx:id="comboJudge3" layoutX="380.0" layoutY="20.0" maxHeight="40.0" maxWidth="160.0" minHeight="40.0" minWidth="160.0" prefHeight="40.0" prefWidth="160.0" />
+                  <Button id="btnRed" fx:id="btnAdd" layoutX="225.0" layoutY="100.0" maxHeight="40.0" maxWidth="110.0" minHeight="40.0" minWidth="110.0" mnemonicParsing="false" onAction="#add" prefHeight="40.0" prefWidth="110.0" text="A Ñ A D I R" />
+                  <Label fx:id="lblMsg" alignment="CENTER" layoutY="70.0" maxHeight="30.0" maxWidth="560.0" minHeight="30.0" minWidth="560.0" prefHeight="30.0" prefWidth="560.0" textAlignment="CENTER" textFill="#ffc629" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="360.0" maxWidth="760.0" minHeight="360.0" minWidth="760.0" prefHeight="360.0" prefWidth="760.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuFrameController">
+   <children>
+      <BorderPane maxHeight="360.0" maxWidth="760.0" minHeight="360.0" minWidth="760.0" prefHeight="360.0" prefWidth="760.0">
+         <top>
+            <Pane maxHeight="40.0" maxWidth="760.0" minHeight="40.0" minWidth="760.0" prefHeight="40.0" prefWidth="760.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label id="lblTitleMenu" fx:id="lblName" layoutY="3.0" prefHeight="35.0" prefWidth="760.0" text="**Nombre Institucion**" />
+               </children>
+            </Pane>
+         </top>
+         <left>
+            <Pane prefHeight="320.0" prefWidth="380.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="320.0" fitWidth="380.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/IMG_6998.jpg" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="480.0" minX="100.0" minY="10.0" width="570.0" />
+                     </viewport>
+                  </ImageView>
+                  <Pane id="paneTransparentRed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="380.0">
+                     <children>
+                        <Label id="lblTitleWhite" layoutY="10.0" prefHeight="45.0" prefWidth="380.0" text="E V E N T O S  V I G E N T E S" />
+                        <Pane id="paneTransparent" prefHeight="320.0" prefWidth="380.0">
+                           <children>
+                              <Label id="lblWhite" prefHeight="320.0" prefWidth="380.0" text="Descubre todos los eventos &#10;que se encuentran vigentes &#10;en este momento" />
+                              <Button id="btnRed" fx:id="btnActiveEvents" layoutX="135.0" layoutY="266.0" mnemonicParsing="false" onAction="#activeEvents" prefHeight="40.0" prefWidth="110.0" text="Ver eventos" />
+                           </children>
+                        </Pane>
+                     </children></Pane>
+               </children></Pane>
+         </left>
+         <right>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="380.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView id="image" fitHeight="320.0" fitWidth="380.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/WhatsApp%20Image%202023-11-28%20at%2020.38.22.jpeg" />
+                     </image>
+                     <viewport>
+                        <Rectangle2D height="480.0" minX="370.0" minY="100.0" width="570.0" />
+                     </viewport>
+                  </ImageView>
+                  <Pane id="paneTransparentRed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="380.0">
+                     <children>
+                        <Label id="lblTitleWhite" layoutY="10.0" prefHeight="45.0" prefWidth="380.0" text="T U S  E V E N T O S" />
+                        <Pane id="paneTransparent" prefHeight="320.0" prefWidth="380.0">
+                           <children>
+                              <Label id="lblWhite" prefHeight="320.0" prefWidth="380.0" text="Consulta los eventos en los&#10;que has o estas participando" />
+                              <Button id="btnRed" fx:id="btnYourEvents" layoutX="135.0" layoutY="266.0" mnemonicParsing="false" onAction="#yourEvents" prefHeight="40.0" prefWidth="110.0" text="Ver eventos" />
+                           </children>
+                        </Pane>
+                     </children></Pane>
+               </children>
+            </Pane>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>

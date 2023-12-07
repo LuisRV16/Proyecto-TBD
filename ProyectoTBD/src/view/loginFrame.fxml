@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="pane" prefHeight="340.0" prefWidth="380.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginFrameController">
+   <children>
+      <Pane fx:id="paneTop" prefHeight="110.0" prefWidth="384.0">
+         <children>
+            <ImageView fitHeight="92.0" fitWidth="135.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/VRC-Over-Under.png" />
+               </image>
+            </ImageView>
+            <Line endX="100.0" endY="90.0" layoutX="55.0" layoutY="10.0" startX="100.0" stroke="#b2b2b2" />
+            <Label id="lblTitleSmall" fx:id="lblLoginTitle" layoutX="155.0" maxHeight="110.0" maxWidth="226.0" minHeight="110.0" minWidth="226.0" prefHeight="110.0" prefWidth="226.0" text="I N I C I O   D E   S E S I O N&#10;J U E C E S  Y   &#10;A D M I N I S T R A D O R E S" textAlignment="CENTER" textFill="#9e9e9e">
+               <font>
+                  <Font name="Lucida Sans Regular" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label layoutX="79.0" layoutY="119.0" prefHeight="30.0" prefWidth="226.0" text="U S U A R I O :" textFill="WHITE">
+         <font>
+            <Font name="Lucida Sans Regular" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="79.0" layoutY="190.0" prefHeight="30.0" prefWidth="226.0" text="C O N T R A S E Ñ A :" textFill="WHITE">
+         <font>
+            <Font name="Lucida Sans Regular" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUsuario" layoutX="79.0" layoutY="149.0" prefHeight="33.0" prefWidth="226.0" promptText="Usuario:" stylesheets="@style.css">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </TextField>
+      <Button id="btnRed" fx:id="btnIniciarSesion" layoutX="141.0" layoutY="279.0" mnemonicParsing="false" onAction="#cambiarPanel" stylesheets="@style.css" text="I N I C I A R" textFill="WHITE">
+         <font>
+            <Font name="Lucida Sans Demibold" size="14.0" />
+         </font>
+      </Button>
+      <PasswordField id="password" fx:id="txtContrasenna" layoutX="79.0" layoutY="220.0" onKeyTyped="#updateShowPassword" prefHeight="33.0" prefWidth="226.0" promptText="Contraseña:">
+         <font>
+            <Font name="Calibri" size="18.0" />
+         </font>
+      </PasswordField>
+      <Label fx:id="lblPasswordShow" layoutX="79.0" layoutY="254.0" prefHeight="25.0" prefWidth="226.0" textFill="WHITE">
+         <font>
+            <Font name="Lucida Sans Regular" size="12.0" />
+         </font>
+      </Label>
+      <ToggleButton id="btnPassword" fx:id="btnPassword" layoutX="305.0" layoutY="219.0" mnemonicParsing="false" onAction="#showPassword" text="?" />
+   </children>
+</AnchorPane>

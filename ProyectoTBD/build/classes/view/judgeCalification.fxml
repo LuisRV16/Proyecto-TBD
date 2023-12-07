@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="300.0" maxWidth="500.0" minHeight="300.0" minWidth="500.0" prefHeight="300.0" prefWidth="500.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.JudgeCalificationController">
+   <children>
+      <BorderPane maxHeight="300.0" maxWidth="500.0" minHeight="300.0" minWidth="500.0" prefHeight="300.0" prefWidth="500.0">
+         <top>
+            <Pane id="paneTop" maxHeight="60.0" maxWidth="500.0" minHeight="60.0" minWidth="500.0" prefHeight="60.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label id="lblTitle" fx:id="lblMsg" alignment="CENTER" maxHeight="60.0" maxWidth="500.0" minHeight="60.0" minWidth="500.0" prefHeight="60.0" prefWidth="500.0" text="Resultado" textFill="#bcbcbc" />
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane id="pane" maxHeight="240.0" maxWidth="500.0" minHeight="240.0" minWidth="500.0" prefHeight="240.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="btnRed" fx:id="btnFin" layoutX="200.0" layoutY="186.0" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" mnemonicParsing="false" onAction="#endEvaluation" prefHeight="40.0" prefWidth="100.0" text="Finalizar" />
+                  <TextArea fx:id="txtaRes" editable="false" layoutX="65.0" layoutY="14.0" maxHeight="150.0" maxWidth="370.0" minHeight="150.0" minWidth="370.0" prefHeight="150.0" prefWidth="370.0" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

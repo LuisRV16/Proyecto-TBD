@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="paneBright" maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ActiveEventsFrameController">
+   <children>
+      <BorderPane id="paneBright" maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0">
+         <right>
+            <Pane id="paneBright" maxHeight="360.0" maxWidth="200.0" minHeight="360.0" minWidth="200.0" prefHeight="360.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="btnRed" fx:id="btnRegister" layoutX="25.0" layoutY="300.0" maxHeight="38.0" maxWidth="150.0" minHeight="38.0" minWidth="150.0" mnemonicParsing="false" onAction="#register" prefHeight="38.0" prefWidth="150.0" text="I N S C R I B E T E" />
+                  <Label id="lblInfo" fx:id="lblInfo" maxWidth="200.0" minWidth="200.0" prefHeight="300.0" prefWidth="200.0" text="&#10;" />
+               </children>
+            </Pane>
+         </right>
+         <top>
+            <Pane id="paneBright" maxHeight="40.0" maxWidth="600.0" minHeight="40.0" minWidth="600.0" prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane id="paneTop" maxHeight="40.0" maxWidth="400.0" minHeight="40.0" minWidth="400.0" prefHeight="40.0" prefWidth="400.0">
+                     <children>
+                        <Label id="lblTitle" layoutX="58.0" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" text="E V E N T O S  V I G E N T E S" />
+                        <Button id="btnBack" fx:id="btnBack" contentDisplay="CENTER" layoutX="-7.0" layoutY="-7.0" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#goBack" prefHeight="55.0" prefWidth="55.0" text="◀" textAlignment="CENTER" />
+                     </children>
+                  </Pane>
+                  <ComboBox fx:id="comboCategory" layoutX="410.0" layoutY="5.0" maxHeight="30.0" maxWidth="180.0" minHeight="30.0" minWidth="180.0" onAction="#inic" prefHeight="30.0" prefWidth="180.0" promptText="Todas las categorias" />
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <ScrollPane fx:id="scrollPaneEvents" maxHeight="360.0" maxWidth="400.0" minHeight="360.0" minWidth="400.0" prefHeight="360.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+               <content>
+                  <VBox id="scroll" fx:id="vboxEvents" maxHeight="360.0" maxWidth="400.0" minHeight="360.0" minWidth="400.0" prefHeight="360.0" prefWidth="400.0" />
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

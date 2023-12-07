@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="pane" fx:id="pane" maxHeight="340.0" maxWidth="760.0" minHeight="340.0" minWidth="760.0" prefHeight="340.0" prefWidth="760.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <ImageView fx:id="wallpaper" fitHeight="340.0" fitWidth="1071.0" layoutX="-300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/wallpaper.png" />
+         </image>
+      </ImageView>
+      <BorderPane maxHeight="340.0" maxWidth="760.0" minHeight="340.0" minWidth="760.0" prefHeight="340.0" prefWidth="760.0">
+         <left>
+            <Pane maxHeight="340.0" maxWidth="380.0" minHeight="340.0" minWidth="380.0" prefHeight="340.0" prefWidth="380.0" BorderPane.alignment="CENTER">
+               <children>
+                  <BorderPane maxHeight="340.0" maxWidth="380.0" minHeight="340.0" minWidth="380.0" prefHeight="340.0" prefWidth="380.0">
+                     <top>
+                        <Pane fx:id="paneTop" maxHeight="80.0" maxWidth="380.0" minHeight="80.0" minWidth="380.0" prefHeight="80.0" prefWidth="380.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fitHeight="46.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" x="10.0" y="10.0">
+                                 <image>
+                                    <Image url="@../images/VexLogo.png" />
+                                 </image>
+                              </ImageView>
+                              <Line endX="140.0" endY="70.0" startX="140.0" startY="10.0" stroke="#8c8c8c" />
+                              <Label id="lblTitleSmall" fx:id="lblLoginTitle" layoutX="141.0" layoutY="19.0" prefHeight="43.0" prefWidth="239.0" text="I N I C I A R  S E S I Ó N" textAlignment="CENTER" textFill="#8c8c8c">
+                                 <font>
+                                    <Font name="Lucida Sans Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </top>
+                     <center>
+                        <Pane id="paneBright" maxHeight="260.0" maxWidth="380.0" minHeight="260.0" minWidth="380.0" prefHeight="260.0" prefWidth="380.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Label layoutX="75.0" layoutY="10.0" prefHeight="30.0" prefWidth="230.0" text="I N S T I T U C I Ó N:">
+                                 <font>
+                                    <Font name="Lucida Sans Regular" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="75.0" layoutY="85.0" prefHeight="30.0" prefWidth="230.0" text="C O N T R A S E Ñ A :">
+                                 <font>
+                                    <Font name="Lucida Sans Regular" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="txtUsuario" layoutX="75.0" layoutY="40.0" maxHeight="30.0" maxWidth="230.0" minHeight="30.0" minWidth="230.0" prefHeight="30.0" prefWidth="230.0" promptText="Institución:" stylesheets="@style.css">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button id="btnRed" fx:id="btnIniciarSesion" layoutX="135.0" layoutY="170.0" maxHeight="35.0" maxWidth="110.0" minHeight="35.0" minWidth="110.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="35.0" prefWidth="110.0" stylesheets="@style.css" text="I N I C I A R" textFill="WHITE">
+                                 <font>
+                                    <Font name="Lucida Sans Demibold" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label id="lblError" fx:id="lblError" layoutY="205.0" prefHeight="40.0" prefWidth="380.0" />
+                              <ToggleButton id="btnQuestion" fx:id="btnPassword" layoutX="300.0" layoutY="115.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#showPassword" prefHeight="30.0" text="?" />
+                              <Label fx:id="lblPasswordShow" layoutX="75.0" layoutY="145.0" maxHeight="25.0" maxWidth="230.0" minHeight="25.0" minWidth="230.0" prefHeight="25.0" prefWidth="230.0">
+                                 <font>
+                                    <Font name="Lucida Sans Regular" size="12.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField id="password" fx:id="txtContrasenna" layoutX="75.0" layoutY="115.0" maxHeight="30.0" maxWidth="230.0" minHeight="30.0" minWidth="230.0" onKeyTyped="#updateShowPassword" prefHeight="30.0" prefWidth="230.0" promptText="Contraseña:">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </PasswordField>
+                           </children>
+                        </Pane>
+                     </center>
+                  </BorderPane>
+               </children>
+            </Pane>
+         </left>
+         <right>
+            <Pane id="paneTransparent" maxHeight="340.0" maxWidth="380.0" minHeight="340.0" minWidth="380.0" prefHeight="340.0" prefWidth="380.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="btnQuestion" fx:id="btnEvents" layoutX="300.0" layoutY="135.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#activeEvents" prefHeight="30.0" text="?" />
+                  <Label id="lblTitle" layoutY="5.0" prefHeight="30.0" prefWidth="380.0" text="¿No tienes cuenta?" />
+                  <Label id="lblBig" layoutY="30.0" prefHeight="30.0" prefWidth="380.0" text="Registrate" />
+                  <Button id="btnRed" fx:id="btnRegistrar" layoutX="120.0" layoutY="295.0" maxHeight="35.0" maxWidth="140.0" minHeight="35.0" minWidth="140.0" mnemonicParsing="false" onAction="#register" prefHeight="35.0" prefWidth="140.0" stylesheets="@style.css" text="R E G I S T R A R" textFill="WHITE">
+                     <font>
+                        <Font name="Lucida Sans Demibold" size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="txtUserRegister" layoutX="75.0" layoutY="80.0" maxHeight="30.0" maxWidth="230.0" minHeight="30.0" minWidth="230.0" prefHeight="30.0" prefWidth="230.0" promptText="Institución:" stylesheets="@style.css">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="75.0" layoutY="220.0" prefHeight="30.0" prefWidth="230.0" text="C O N T R A S E Ñ A :">
+                     <font>
+                        <Font name="Lucida Sans Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="55.0" prefHeight="30.0" prefWidth="230.0" text="I N S T I T U C I Ó N:">
+                     <font>
+                        <Font name="Lucida Sans Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="75.0" layoutY="110.0" prefHeight="30.0" prefWidth="230.0" text="E V E N T O:">
+                     <font>
+                        <Font name="Lucida Sans Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="comboEvent" layoutX="75.0" layoutY="135.0" maxHeight="30.0" maxWidth="230.0" minHeight="30.0" minWidth="230.0" prefHeight="30.0" prefWidth="230.0" promptText="Seleccionar Evento" />
+                  <ToggleButton id="btnQuestion" fx:id="btnPasswordRegister" layoutX="300.0" layoutY="245.0" maxHeight="30.0" minHeight="30.0" mnemonicParsing="false" onAction="#showPasswordRegister" prefHeight="30.0" text="?" />
+                  <Label fx:id="lblPasswordShowRegister" layoutX="75.0" layoutY="270.0" prefHeight="25.0" prefWidth="230.0">
+                     <font>
+                        <Font name="Lucida Sans Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <PasswordField id="password" fx:id="txtPasswordRegister" layoutX="77.0" layoutY="245.0" maxHeight="30.0" maxWidth="230.0" minHeight="30.0" minWidth="230.0" onKeyTyped="#updateShowPasswordRegister" prefHeight="30.0" prefWidth="230.0" promptText="Contraseña:">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Label layoutX="75.0" layoutY="165.0" prefHeight="30.0" prefWidth="230.0" text="D I R E C C I Ó N:">
+                     <font>
+                        <Font name="Lucida Sans Regular" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtAdressRegister" layoutX="75.0" layoutY="190.0" maxHeight="30.0" maxWidth="230.0" minHeight="30.0" minWidth="230.0" prefHeight="30.0" prefWidth="230.0" promptText="Dirección:" stylesheets="@style.css">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </TextField>
+               </children></Pane>
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>

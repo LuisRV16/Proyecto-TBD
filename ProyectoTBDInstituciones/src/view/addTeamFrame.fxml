@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="paneBright" maxHeight="350.0" maxWidth="400.0" minHeight="350.0" minWidth="400.0" prefHeight="350.0" prefWidth="400.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addTeamFrameController">
+   <children>
+      <TextField fx:id="txtStudent1" layoutX="40.0" layoutY="159.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Estudiante" />
+      <TextField fx:id="txtStudent2" layoutX="40.0" layoutY="199.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Estudiante" />
+      <TextField fx:id="txtStudent3" layoutX="40.0" layoutY="239.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Estudiante" />
+      <TextField fx:id="txtAge1" layoutX="210.0" layoutY="159.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Edad" />
+      <TextField fx:id="txtAge2" layoutX="210.0" layoutY="199.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Edad" />
+      <TextField fx:id="txtAge3" layoutX="210.0" layoutY="239.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Edad" />
+      <TextField fx:id="txtTeamName" layoutX="40.0" layoutY="79.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Nombre del equipo" />
+      <TextField fx:id="txtCoachName" layoutX="40.0" layoutY="119.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Asesor del equipo" />
+      <Button id="btnRed" fx:id="btnSubmit" layoutX="130.0" layoutY="299.0" mnemonicParsing="false" onAction="#createTeam" text="Registrar equipo" />
+      <ComboBox fx:id="comboCategory" layoutX="210.0" layoutY="79.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Categoria" />
+      <TextField fx:id="txtCoachMail" layoutX="210.0" layoutY="118.0" maxHeight="30.0" maxWidth="150.0" minHeight="30.0" minWidth="150.0" prefHeight="30.0" prefWidth="150.0" promptText="Correo del Asesor" />
+      <Label fx:id="lblError" layoutY="269.0" maxWidth="400.0" minWidth="400.0" prefWidth="400.0" />
+      <Pane id="paneTop" maxHeight="60.0" maxWidth="400.0" minHeight="60.0" minWidth="400.0" prefHeight="60.0" prefWidth="400.0">
+         <children>
+            <Label id="lblTitleMenu" maxHeight="60.0" maxWidth="400.0" minHeight="60.0" minWidth="400.0" prefHeight="60.0" prefWidth="400.0" text="N U E V O  E Q U I P O" />
+         </children>
+      </Pane>
+      <Button id="btnBack" fx:id="btnGoBack" layoutY="2.0" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#goBack" prefHeight="55.0" prefWidth="55.0" text="◀" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="360.0" maxWidth="360.0" minHeight="360.0" minWidth="360.0" prefHeight="360.0" prefWidth="360.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminSetJudgeToTeamFrameController">
+   <children>
+      <BorderPane id="pane" maxHeight="360.0" maxWidth="360.0" minHeight="360.0" minWidth="360.0" prefHeight="360.0" prefWidth="360.0">
+         <top>
+            <Pane id="paneTop" maxHeight="60.0" maxWidth="360.0" minHeight="60.0" minWidth="360.0" prefHeight="60.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="lblTitle" maxHeight="60.0" maxWidth="360.0" minHeight="60.0" minWidth="360.0" prefHeight="60.0" prefWidth="360.0" text="A S I G N A R  J U E Z" textFill="#bcbcbc" />
+                  <Button id="btnBack" fx:id="btnGoBack" layoutY="2.0" maxHeight="55.0" maxWidth="55.0" minHeight="55.0" minWidth="55.0" mnemonicParsing="false" onAction="#goBack" prefHeight="55.0" prefWidth="55.0" text="◀" />
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <Pane maxHeight="300.0" maxWidth="360.0" minHeight="300.0" minWidth="360.0" prefHeight="300.0" prefWidth="360.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="btnRed" fx:id="btnSet" layoutX="120.0" layoutY="240.0" maxHeight="40.0" maxWidth="120.0" minHeight="40.0" minWidth="120.0" mnemonicParsing="false" onAction="#setJudgeToTeam" prefHeight="40.0" prefWidth="120.0" text="A S I G N A R" />
+                  <ComboBox fx:id="comboJudges" layoutX="20.0" layoutY="10.0" prefWidth="320.0" promptText="Juez" />
+                  <TextArea fx:id="txtaInfo" editable="false" layoutX="20.0" layoutY="60.0" prefHeight="170.0" prefWidth="320.0" />
+                  <Label fx:id="lblMsg" />
+               </children>
+            </Pane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
